@@ -1,0 +1,27 @@
+.photo-grid-item {
+    :hover {
+        opacity: 70%;
+    }
+}
+
+.pop-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    display: none;
+}
+
+
+
+@keyframes mymove {
+    0%   {color: red;}
+    25%  {color: blue;}
+    50%  {color: yellow;}
+    75%  {color: green;}
+    100% {color: red;}
+}
+
+div { 
+    animation: mymove 10s infinite;
+}

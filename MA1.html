@@ -7,36 +7,92 @@
 </head>
 <body>
     <div class='menu-container'>
+        <div class="title">Things I LOVE</div>
         <div class='menu'>
-        <div class='date'>Aug 14, 2016</div>
-        <div class='signup'>Sign Up</div>
-        <div class='login'>Login</div>
+            <div class='about-me'>about me</div>
+            <!-- <div class='categories'>sort by:</div>  -->
+            <!-- add drop down here -->
         </div>
     </div> 
-    <div class="title">
-        <h1>Obsessed</h1>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h1 id="piece-name">Title</h1>
+            <img id="modal-image" src="images/one.svg" alt="">
+            <div class="details-container">
+                <div class="detail" id="type">genre</div>
+                <div class="detail" id="artist-name">Artist name</div>
+            </div>
+            <div class="description">
+                <div class="label">ChatGPT summary (sometimes me, if it's too niche):</div>
+                <div id="text">Description</div>
+            </div>
+            <div class="my-thoughts">    
+                <div class="label">My thoughts:</div>
+                <div id="opinion">My thoughts</div>
+            </div>
+        </div>
+
     </div>
+
+
+    
     <div class='photo-grid-container'>
         <div class='photo-grid'>
-            <div class='photo-grid-item first-item' id="pop-up-button">
-                <img src='images/one.svg' width="200px"/>
+            <!-- turn this into a database and link -->
+            <div class='photo-grid-item' onclick="openModal('images/westwing.jpg', 0)">
+                <img src='images/westwing.jpg' class="photo-grid-image"/>
             </div>
-            <div class='photo-grid-item'>
-                <img src='images/two.svg'/>
+            
+            <div class='photo-grid-item' onclick="openModal('images/hmhas.png', 1)">
+                <img src='images/hmhas.png' class="photo-grid-image"/>
             </div>
-            <div class='photo-grid-item'>
-                <img src='images/three.svg'/>
+            
+            <div class='photo-grid-item' onclick="openModal('images/maddiewoo.png', 2)">
+                <img src='images/maddiewoo.png' class="photo-grid-image"/>
             </div>
-            <div class='photo-grid-item'>
-                <img src='images/four.svg'/>
+            
+            <div class='photo-grid-item' onclick="openModal('images/crazyrichasians.jpg', 3)">
+                <img src='images/crazyrichasians.jpg' class="photo-grid-image"/>
             </div>
-            <div class='photo-grid-item last-item'>
-                <img src='images/five.svg'/>
-            </div>          
+            
+            <div class='photo-grid-item' onclick="openModal('images/penderwicks.jpg', 4)">
+                <img src='images/penderwicks.jpg' class="photo-grid-image"/>
+            </div>
+            
+            <div class='photo-grid-item' onclick="openModal('images/agggtm.jpg', 5)">
+                <img src='images/agggtm.jpg' class="photo-grid-image"/>
+            </div>
+            
+            <div class='photo-grid-item' onclick="openModal('images/bluey.jpg', 6)">
+                <img src='images/bluey.jpg' class="photo-grid-image"/>
+            </div>
+            
+            <div class='photo-grid-item' onclick="openModal('images/chihiro.jpg', 7)">
+                <img src='images/chihiro.jpg' class="photo-grid-image"/>
+            </div>
+            
+            <div class='photo-grid-item' onclick="openModal('images/icecreamman.jpg', 8)">
+                <img src='images/icecreamman.jpg' class="photo-grid-image"/>
+            </div>
+            
+            <div class='photo-grid-item' onclick="openModal('images/wandavision.jpg', 9)">
+                <img src='images/wandavision.jpg' class="photo-grid-image"/>
+            </div>
+            
+            <div class='photo-grid-item' onclick="openModal('images/neverfeltsoalone.png', 10)">
+                <img src='images/neverfeltsoalone.png' class="photo-grid-image"/>
+            </div>
+            
+            <div class='photo-grid-item' onclick="openModal('images/nekoatsume.png', 11)">
+                <img src='images/nekoatsume.png' class="photo-grid-image"/>
+            </div>            
+            
         </div>
-    </div>
-    <div class="pop-up" id="pop-up-message">
-        <p>testing</p>
     </div>
     
 </body>

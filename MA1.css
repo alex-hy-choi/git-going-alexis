@@ -1,18 +1,18 @@
-.photo-grid-item {
-    :hover {
-        opacity: 70%;
-    }
+@font-face {
+    font-family: myFirstFont;
+    src: url("billie-eilish.ttf");
+  }
+
+html {
+    background-color: white;
 }
 
-.pop-up {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 100;
-    display: none;
+.title {
+    font-size: 40px;
 }
 
 
+/* colorful text */
 
 @keyframes mymove {
     0%   {color: red;}
@@ -22,6 +22,142 @@
     100% {color: red;}
 }
 
-div { 
+h1,
+.title { 
+    animation: mymove 10s infinite;
+    font-family: myFirstFont;
+}
+
+
+
+/* grey bkg behind pop-up */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  /* pop-up box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    width: 80%;
+    height: auto;
+  }
+
+  /* pop-up things inside */
+  #modal-image {
+    width: 20%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+/* menu */
+
+.menu-container {
+    display: flex;
+    grid-template-columns: repeat(n, 1fr);
+    padding: 20px 0;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.menu {
+    justify-content: flex-end;
+    display: flex;
+    margin: 20px
+}
+
+.about-me,
+.categories{
+    margin-left: 30px;
+}
+
+.details-container {
+    display: flex;
+    justify-content: flext-start;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.detail {
+    height: 20px;
+    width: auto;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #d5dcdf;
+    border-radius: 15px;
+}
+
+.my-thoughts,
+.description {
+    display: flex;
+    justify-content: flext-start;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.label {
+    height: 20px;
+    margin-right: 10px;
     animation: mymove 10s infinite;
 }
+
+
+
+/* gallery */
+
+.photo-grid-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+}
+  
+.photo-grid {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+  
+.photo-grid-item {
+    border: 5px solid white;
+    width: 300px;
+    height: 300px;
+    :hover {
+        opacity: 70%;
+    };
+    overflow: hidden;
+}
+
+.photo-grid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+

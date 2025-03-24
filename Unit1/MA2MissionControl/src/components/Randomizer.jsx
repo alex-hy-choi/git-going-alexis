@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function RandomObjectPicker({ items, heading, text }) {
+function RandomObjectPicker({ items, heading, text, className}) {
     const [randomItem, setRandomItem] = useState(null);
   
     const pickRandom = () => {
@@ -11,7 +11,7 @@ function RandomObjectPicker({ items, heading, text }) {
     };
   
     return (
-      <div>
+      <div className={className}>
         <button onClick={pickRandom}>{heading}</button>
         {randomItem && (
           <div>

@@ -40,7 +40,8 @@ body {
 /* setting fonts */
 h1,
 h2,
-h3 {
+h3,
+input {
   font-family: "helloHeadline";
   margin-top: 1rem;
   margin-bottom: 0;
@@ -103,12 +104,10 @@ img {
 }
 
 /* more fonts */
-input,
 optgroup,
 select,
 textarea,
 p {
-  font-family: "";
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
@@ -138,6 +137,7 @@ input[type="text"] {
   cursor: pointer;
   padding: 1 rem;
   text-transform: capitalize;
+  margin: auto;
 }
 .btn__danger {
   background-color: #88cafc;

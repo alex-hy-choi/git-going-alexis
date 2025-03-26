@@ -9,6 +9,7 @@
   outline-offset: 0;
 }
 
+/* adding two cute fonts */
 @font-face {
   font-family: "helloHeadline";
   src: url(assets/Hello_Headline.woff),
@@ -22,8 +23,8 @@
   
 }
 
+/* setting the side of the screen */
 html {
-  /* font-size: 62.5% / 1.15 "helloHeadline"; */
   width: 100%;
   height: 100%
 }
@@ -36,6 +37,7 @@ body {
   
 }
 
+/* setting fonts */
 h1,
 h2,
 h3 {
@@ -51,6 +53,8 @@ ul {
   list-style: none;
   padding: 0;
 }
+
+/* this is the base button. it changes a lot depending on what its used for */
 button {
   -moz-osx-font-smoothing: inherit;
   -webkit-font-smoothing: inherit;
@@ -66,29 +70,39 @@ button {
   padding: 1rem;
   width: auto;
   border-radius: 20px;
-}
+  
+} 
+/* hover for ui */
+ button:hover {
+  opacity: 70%;
+};
 
+/* cute little iframe needs margin and shadows for texture */
 iframe {
   margin: 2rem;
+  box-shadow:
+    0 2px 4px 0 rgb(0 0 0 / 20%),
+    0 2.5rem 5rem 0 rgb(0 0 0 / 10%);
 }
 
 img {
   width: 20%;
   height: auto;
 }
-
+/* todo img needs to be larger */
 #butler {
   margin: 0;
   width: 40%;
   height: auto
 }
-
+/* top img needs to be larger */
 #main-img {
   margin:0;
   width: 20%;
   height: auto;
 }
 
+/* more fonts */
 input,
 optgroup,
 select,
@@ -115,29 +129,22 @@ input[type="text"] {
     line-height: 1.31579;
   }
 }
-/* End resets */
 
-/* Global styles */
+
 .form-group > input[type="text"] {
   display: inline-block;
 }
-
-
 .btn {
   cursor: pointer;
   padding: 1 rem;
   text-transform: capitalize;
 }
-
-
 .btn__danger {
   background-color: #88cafc;
   color: #fff;
 }
-
 .label-wrapper {
   flex: 0 0 100%;
-  /* margin: 0; */
   text-align: center;
 }
 .visually-hidden {
@@ -155,7 +162,7 @@ input[type="text"] {
 }
 /* End global styles */
 
-
+/* BLUEY STYLE (DEFAULT) */
 .default1 {
   background-color: rgb(210,235,255);
   width: 100%;
@@ -165,6 +172,7 @@ input[type="text"] {
   background-color: #88cafc;
 }
 
+/* BINGO STYLE */
 .default2 {
   background-color: rgb(255,208,141);
   width: 100%;
@@ -173,6 +181,8 @@ input[type="text"] {
 .default2 button{
   background-color: #ffb070;
 }
+
+/* the button that doesn't match the rest bc it represents what the other theme would be */
 #bluey {
   background-color: #88cafc;
   width: 200px;
@@ -188,20 +198,22 @@ input[type="text"] {
   margin-bottom: 2rem;
 }
 
+/* header at top w title */
 #header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: auto;
   align-items: flex-end;
+  margin-bottom: 2rem;
 }
 
+/* column container */
 .component-container {
   display: flex;
   flex-direction: row;
 }
-
-
+/* columns  there are two, i don't really call the id but uncessecary */
 .column {
   display: flex;
   flex-direction: column;
@@ -209,12 +221,13 @@ input[type="text"] {
   align-items: center;
 }
 
+/* each component */
 .column-object {
   background-color: white;
-  /* box-shadow:
+  box-shadow:
     0 2px 4px 0 rgb(0 0 0 / 20%),
-    0 2.5rem 5rem 0 rgb(0 0 0 / 10%); */
-  margin: 2rem 0 4rem 0;
+    0 2.5rem 5rem 0 rgb(0 0 0 / 10%);
+  margin-bottom: 2rem;
   width: 500px;
   height: flex;
   padding: 2rem;

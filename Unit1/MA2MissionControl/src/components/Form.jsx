@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+// this is mostly the starter code, with a few things taken out for simplicity
+
 function Form(props) {
   const [name, setName] = useState("");
 

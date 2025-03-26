@@ -1,4 +1,5 @@
 function Todo(props) {
+  // starter code with things taken out
     return (
       <li className="todo stack-small">
         <div className="c-cb">

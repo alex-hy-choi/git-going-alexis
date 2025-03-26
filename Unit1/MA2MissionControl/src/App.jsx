@@ -50,7 +50,7 @@ function App(props) {
     setTasks([...tasks, newTask]);
   }
   
-  
+  // img src=specific image in the ToDo
   return (
     <div className="todoapp stack-large">
       <h2>Work Hard, Play Hard</h2>

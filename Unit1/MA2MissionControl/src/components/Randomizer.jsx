@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function RandomObjectPicker({ items, heading, text, className}) {
+function RandomObjectPicker({ items, heading, text, className, src, alt}) {
     const [randomItem, setRandomItem] = useState(null);
   
     const pickRandom = () => {
@@ -12,13 +12,16 @@ function RandomObjectPicker({ items, heading, text, className}) {
   
     return (
       <div className={className}>
-        <button onClick={pickRandom}>{heading}</button>
+        <img src={src} alt={alt} />
+        <h2>{heading}</h2>
+        
         {randomItem && (
           <div>
             <h3>{text}</h3>
-            <pre>{JSON.stringify(randomItem, null, 2)}</pre>
+            <p>{JSON.stringify(randomItem, null, 2)}</p>
           </div>
         )}
+        <button onClick={pickRandom}>GO!</button>
       </div>
     );
   }

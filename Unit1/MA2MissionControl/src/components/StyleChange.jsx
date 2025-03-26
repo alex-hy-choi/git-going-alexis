@@ -15,6 +15,7 @@ function StyleChange({children}) {
   // 'caption' image -> bluey or bingo
   const[imgSRC, setSRC] = useState(BlueyImage)
   const[altText, setAlt] = useState("bluey")
+  const[header, setHeader] = useState("Bluey!")
   
 
     const changeStyle = () => {
@@ -26,6 +27,7 @@ function StyleChange({children}) {
       setChangeBtn("bluey")
       setSRC(BingoImage)
       setAlt("bingo")
+      setHeader("Bingo!")
 
     } else {
       
@@ -35,6 +37,7 @@ function StyleChange({children}) {
         setChangeBtn("bingo")
         setSRC(BlueyImage)
         setAlt("bluey")
+        setHeader("Bluey!")
 
     }
 
@@ -45,7 +48,7 @@ function StyleChange({children}) {
     return (
       <div className={clzz}>
         <div id="header">
-          <h1>Bluey!</h1>
+          <h1>{header}</h1>
           <img src={imgSRC} alt={altText} id="main-img" />
           <button id={changeBtn} onClick={changeStyle}>{title}</button>
         </div>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My first Express server page</title>
+  
+</head>
+<body>
+    <script>
+        let thingToSend = {'items': 20}
+  
+        fetch('http://localhost:3000/thisIsAPost', {
+          method: 'post',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(thingToSend)
+        })
+    </script>
+  
+  <p> It works!</p>
+</body>
+</html>

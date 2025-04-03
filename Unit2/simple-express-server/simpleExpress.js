@@ -5,11 +5,11 @@ const port = 3000
 app.use(express.json());
 
 app.post('/thisIsAPost', (req, res) => {
-    console.log('POST received')
-    console.log(req);
-    console.log(req.body);
-  })
-  
+  console.log('POST received')
+  //console.log(req);
+  console.log(req.body);
+})
+
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/simpleExpress.html'))
 

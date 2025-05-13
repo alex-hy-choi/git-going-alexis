@@ -4,6 +4,7 @@ const userModel = require('./models/Nuevan')
 const server = '127.0.0.1:27017';
 const database = 'nuevans';      // Since we made our schema into a model, this should be created
 
+
 class Database {
   constructor() {
     this._connect()

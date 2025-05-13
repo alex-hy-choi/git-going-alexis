@@ -29,4 +29,5 @@ const nuevanSchema = new Schema({
 });
 
 
+
 module.exports = mongoose.model("Nuevan", nuevanSchema);

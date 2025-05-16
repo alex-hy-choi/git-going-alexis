@@ -107,6 +107,7 @@ router.delete('/nueva/:id', (req, res) => {
 
 // BOOK SCHEMA
 
+// get whole schema
 router.get('/book', (req, res) => {
   BookSchema.find(req.query)
   .then(books => {
@@ -119,7 +120,7 @@ router.get('/book', (req, res) => {
   })
 })
 
-//Read/get by id
+// get by id
 router.get('/book/:id', (req, res) => {
   BookSchema.findById(req.params.id)
   .then(book => {
@@ -132,8 +133,9 @@ router.get('/book/:id', (req, res) => {
   })
 })
 
+// get by book name (if multiple, return multiple)
 router.get('/book/name/:name', (req, res) => {
-  BookSchema.findOne({ name: req.params.name})
+  BookSchema.find({ name: req.params.name})
   .then(book => {
     console.log("succesfully got one!")
     console.log(book)
@@ -144,6 +146,7 @@ router.get('/book/name/:name', (req, res) => {
   })
 })
 
+// get by author (if multiple, return multiple)
 router.get('/book/author/:author', (req, res) => {
   BookSchema.find({ author: req.params.author})
   .then(book => {
@@ -156,11 +159,8 @@ router.get('/book/author/:author', (req, res) => {
   })
 })
 
-
-//we will be using the '/add' to do a POST request
+// create new book entry
 router.post('/book/add', (req, res) => {
-  // TODO:
-  // Create:
   BookSchema.create(req.body)
   .then(book => {
     console.log(BookSchema)
@@ -171,26 +171,21 @@ router.post('/book/add', (req, res) => {
   })
 })
 
-//TODO: change '/' below to be by id
+// find by id and update
 router.put('/book/:id', (req, res) => {
-  // TODO:
-  // Update:
-  BookSchema.findByIdAndUpdate(req.params.id, req.body )
+  BookSchema.findByIdAndUpdate(req.params.id, req.body, { new: true })
   .then(updated => {
     console.log("succesfully changed one!")
     res.send(updated)
-    console.log(book)
   })
   .catch(err => {
-    res.json(err)
+    return res.json(err)
   })
 })
 
-//TODO: change '/' below to be by id
+// find by id and delete
 router.delete('/book/:id', (req, res) => {
-  // TODO:
-  // Delete:
-  BookSchema.findByIdAndDelete(req.params.id)
+  BookSchema.findByIdAndDelete(req.params.id, { new: true })
   .then(updated => {
     console.log("succesfully deleted one!")
     res.send(updated)
@@ -218,21 +213,20 @@ router.delete('/book/:id', (req, res) => {
 
 // MOVIE SCHEMA
 
+// get whole schema
 router.get('/movie', (req, res) => {
   MovieSchema.find(req.query)
-  //'then' happens if find is succesful
   .then(movies => {
     console.log("succesfully got entire db!")
     console.log(movies)
     res.json(movies)
   })
-  //if theres an error, 'catch' happens instead
   .catch(err => {
     console.error(err)
   })
 })
 
-//Read/get by id
+// get by id
 router.get('/movie/:id', (req, res) => {
   MovieSchema.findById(req.params.id)
   .then(movie => {
@@ -245,10 +239,11 @@ router.get('/movie/:id', (req, res) => {
   })
 })
 
+// get by name (if multiple, get all)
 router.get('/movie/name/:name', (req, res) => {
-  MovieSchema.findOne({ name: req.params.name})
+  MovieSchema.find({ name: req.params.name})
   .then(movie => {
-    console.log("succesfully got one!")
+    console.log("succesfully got by name!")
     console.log(movie)
     res.json(movie)
   })
@@ -257,10 +252,11 @@ router.get('/movie/name/:name', (req, res) => {
   })
 })
 
-router.get('/movie/director/:director', (req, res) => {
-  MovieSchema.findOne({ director: req.params.director})
+// get by corresponding book (if multiple, get all)
+router.get('/movie/book/:book', (req, res) => {
+  MovieSchema.find({ book: req.params.book})
   .then(movie => {
-    console.log("succesfully got one!")
+    console.log("succesfully got by book!")
     console.log(movie)
     res.json(movie)
   })
@@ -269,11 +265,8 @@ router.get('/movie/director/:director', (req, res) => {
   })
 })
 
-
-//we will be using the '/add' to do a POST request
+// add new movie entry
 router.post('/movie/add', (req, res) => {
-  // TODO:
-  // Create:
   MovieSchema.create(req.body)
   .then(movie => {
     console.log(MovieSchema)
@@ -284,26 +277,21 @@ router.post('/movie/add', (req, res) => {
   })
 })
 
-//TODO: change '/' below to be by id
-router.put('/book/:id', (req, res) => {
-  // TODO:
-  // Update:
-  MovieSchema.findByIdAndUpdate(req.params.id, req.body )
+// find by id and update
+router.put('/movie/:id', (req, res) => {
+  MovieSchema.findByIdAndUpdate(req.params.id, req.body, { new: true })
   .then(updated => {
     console.log("succesfully changed one!")
     res.send(updated)
-    console.log(movie)
   })
   .catch(err => {
     res.json(err)
   })
 })
 
-//TODO: change '/' below to be by id
-router.delete('/book/:id', (req, res) => {
-  // TODO:
-  // Delete:
-  MovieSchema.findByIdAndDelete(req.params.id)
+// find by id and delete
+router.delete('/movie/:id', (req, res) => {
+  MovieSchema.findByIdAndDelete(req.params.id, { new: true })
   .then(updated => {
     console.log("succesfully deleted one!")
     res.send(updated)
@@ -313,7 +301,6 @@ router.delete('/book/:id', (req, res) => {
     res.json(err)
   })
 })
-
 
 
 module.exports = router

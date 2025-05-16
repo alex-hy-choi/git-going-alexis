@@ -18,8 +18,7 @@ const movieSchema = new Schema({
     },
 
     releaseYear: {
-        type: String,
-        required: true
+        type: Number,
     },
     
     book: {
@@ -27,13 +26,12 @@ const movieSchema = new Schema({
         required: true,
     },
     
-    bookRead: {
+    watched: {
         type: Boolean,
     },
 
     rating: {
         type: Number,
-        required: true,
         min: 0,
         max: 5
     },

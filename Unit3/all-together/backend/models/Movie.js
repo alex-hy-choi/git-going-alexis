@@ -18,8 +18,7 @@ const movieSchema = new Schema({
     },
     
     book: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Book',
+        type: Boolean,
         required: true
     },
     

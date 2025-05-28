@@ -148,11 +148,11 @@ router.get('/movie/:id', (req, res) => {
   })
 })
 
-// get by name (if multiple, get all)
-router.get('/movie/name/:name', (req, res) => {
-  MovieSchema.find({ name: req.params.name})
+// get by title (if multiple, get all)
+router.get('/movie/title/:title', (req, res) => {
+  MovieSchema.findOne({ title: req.params.title})
   .then(movie => {
-    console.log("succesfully got by name!")
+    console.log("succesfully got by title!")
     console.log(movie)
     res.json(movie)
   })
@@ -187,15 +187,22 @@ router.post('/movie/add', (req, res) => {
 })
 
 // find by id and update
-router.put('/movie/:id', (req, res) => {
+router.put('/movie/update/:id', (req, res) => {
+  console.log("PUT /movie/update/:id called with id:", req.params.id);
+  console.log("Body:", req.body);
   MovieSchema.findByIdAndUpdate(req.params.id, req.body, { new: true })
   .then(updated => {
-    console.log("succesfully changed one!")
-    res.send(updated)
+    if (!updated) {
+      console.log("No document found with that ID");
+      return res.status(404).send({ message: "Movie not found" });
+    }
+    console.log("succesfully changed one!", updated);
+    res.json(updated);
   })
   .catch(err => {
-    res.json(err)
-  })
+    console.error("Error updating movie:", err);
+    res.status(500).json(err);
+  });
 })
 
 // find by id and delete

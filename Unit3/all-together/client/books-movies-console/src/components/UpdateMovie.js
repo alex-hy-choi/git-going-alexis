@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import withRouter from "../withRouter.js";
 
-class AddBook extends Component {
-  constructor() {
-    super();
+class UpdateMovie extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
       title: '',
-      author:'',
-      rating: 0,
-      movie: false,
-      genre: '',
-      review: '',
+      director:'',
+      rating:'',
+      movie:'',
       submitted: null,
     };
   }
@@ -21,61 +20,73 @@ class AddBook extends Component {
     //in the html form below (in the render)
     this.setState({ [e.target.name]: e.target.value });
   };
+  onCheckboxChange = (e) => {
+    this.setState({ [e.target.name]: e.target.checked });
+  };
 
   onSubmit = e => {
+    console.log('params:', this.props.params);
+    console.log('params.id:', this.props.params?.id);
     e.preventDefault();
 
     //this is akin to making our JSON object
     //on postman
     const data = {
       title: this.state.title,
-      author: this.state.author,
-      rating: Number(this.state.rating),
-      movie: this.state.movie,
+      director: this.state.director,
+      book: this.state.book,
       genre: this.state.genre,
-      review: this.state.review,
+      rating: this.state.rating,
+      review: this.state.review
     };
 
     //now we use axios to communicate with our backend
+    //look at routes.js in the backend
+    //to know what
+    console.log("Making PUT to:", `/movie/update/${this.props.params.id}`);
     axios
-      .post('/book/add', data)
+      .put('/movie/update/' + this.props.params.id, data)
       .then(res => {
-        //we clear our state and set submitted to true
-        //in order to navigate back (see render)
-        console.log(data);
         this.setState({
-          title: data.title,
-          author: data.author,
-          rating: data.rating,
-          movie: data.movie,
-          genre: data.genre,
-          review: data.review,
+          title: '',
+          director:'',
+          book: false,
+          genre: '',
+          rating:'',
+          review: '',
           submitted: true,
         })
+        console.log("Submitting update for ID:", this.props.params.id);
       })
       .catch(err => {
-        console.log("Error in AddBook!");
+        console.log(this.props.params.id);
+        console.log("Error in UpdateMovie!");
         console.error(err);
       })
   };
 
   render() {
+    //seeing if we have submitted already
+    console.log('params in render:', this.props.params);
+
     let submitted = this.state.submitted;
     return (
       <div>
+        {/* Link will go to specified URL*/}
+        <Link to="/show-movie"> Back to MoviesList</Link>
         {/* If submitted is true, also render <Navigate>
           which auto Navigates to the URL specified
           */
           submitted && (
-          <Navigate to="/show" replace={true} />
+          <Navigate to="/show-movie" replace={true} />
         )}
-        <h2>Add Book</h2>
-        <p>Create new book</p>
+        <h2>Update Movie</h2>
+        <p>Update new movie</p>
         <form noValidate onSubmit={this.onSubmit}>
           <div>
             <input
               type='text'
-              placeholder='Title of Book'
+              placeholder='Title of Movie'
               name='title'
               value={this.state.title}
               onChange={this.onChange}
@@ -85,9 +96,9 @@ class AddBook extends Component {
           <div>
             <input
               type='text'
-              placeholder='Author of Book'
-              name='author'
-              value={this.state.author}
+              placeholder='Director of Movie'
+              name='director'
+              value={this.state.director}
               onChange={this.onChange}
             />
           </div>
@@ -95,29 +106,29 @@ class AddBook extends Component {
           <div>
             <input
               type='number'
-              min='0'
-              max='5'
-              placeholder='Rating'
+              placeholder='Rating of Movie'
               name='rating'
               value={this.state.rating}
               onChange={this.onChange}
+              min={0}
+              max={10}
             />
           </div>
           <br />
           <div>
             <input
               type='checkbox'
-              placeholder='Movie? (T/F)'
-              name='movie'
-              value={this.state.movie}
-              onChange={e => this.setState({ movie: e.target.checked })}
+              placeholder='Book? (T/F)'
+              name='book'
+              value={this.state.book}
+              onChange={e => this.setState({ book: e.target.checked })}
             />
           </div>
           <br />
           <div>
             <input
               type='text'
-              placeholder='Genre of Book'
+              placeholder='Genre of Movie'
               name='genre'
               value={this.state.genre}
               onChange={this.onChange}
@@ -127,18 +138,17 @@ class AddBook extends Component {
           <div>
             <input
               type='text'
-              placeholder='Review of Book'
+              placeholder='Review of Movie'
               name='review'
               value={this.state.review}
               onChange={this.onChange}
             />
-          </div>
-          <br />
-          <button type = 'submit'>Click to submit</button>
+          </div><br />
+          <button type="submit">Click to submit</button>
         </form>
       </div>
     );
   }
 }
 
-export default AddBook;
+export default withRouter(UpdateMovie);

@@ -3,7 +3,7 @@ import { Navigate, Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
-function ShowBook (props) {
+function ShowMovie (props) {
   //let's us use our parameters
   //try logging params.email
   let params = useParams();
@@ -17,7 +17,7 @@ function ShowBook (props) {
     console.log(params._id);
     axios
       //TODO: implement the correct URL in the get() call below
-      .get(`/book/title/${params.title}`)
+      .get(`/movie/title/${params.title}`)
       .then(response => {
         //saving the data to Post
         setPost(response.data);
@@ -25,7 +25,7 @@ function ShowBook (props) {
         
       })
       .catch( err =>{
-        console.log("Error from ShowBook_get", err);
+        console.log("Error from ShowMovie_get", err);
       });
   }, [params.title]);
   //if our post is null, don't return much.
@@ -35,20 +35,20 @@ function ShowBook (props) {
   return(
     <div>
       {/* Link will go to specified URL*/}
-      <Link to="/show"> Back to BooksList</Link>
+      <Link to="/show-movie"> Back to MoviesList</Link>
       <div>
         <p> Title: {post.title}</p>
-        <p> Author: {post.author}</p>
+        <p> Director: {post.director}</p>
         <p> Rating: {post.rating}</p>
-        <p>Movie: {post.movie ? 'Yes' : 'No'}</p>
+        <p> Book: {post.book ? 'Yes' : 'No'}</p>
         <p> Genre: {post.genre}</p>
         <p> Review: {post.review}</p>
       </div>
       {/* Link will go to specified URL*/}
-      <Link to={`/update-book/${post._id}`}> Edit Book </Link>
-      <Link to={`/delete-book/${post._id}`}> Delete Book </Link>
+      <Link to={`/update-movie/${post._id}`}> Edit Movie </Link>
+      <Link to={`/delete-movie/${post._id}`}> Delete Movie </Link>
     </div>
   );
 
 }
-export default ShowBook;
+export default ShowMovie;

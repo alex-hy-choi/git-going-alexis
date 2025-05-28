@@ -1,0 +1,51 @@
+import React, { Component } from 'react';
+import { Navigate, Link, useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+
+function ShowBook (props) {
+  //let's us use our parameters
+  //try logging params.email
+  let params = useParams();
+  //a way to access the state with
+  //a function component. Eg.
+  //https://www.w3schools.com/react/react_usestate.asp
+  const [post, setPost] = React.useState(null);
+
+
+  React.useEffect(() => {
+    console.log(params._id);
+    axios
+      //TODO: implement the correct URL in the get() call below
+      .get(`/book/title/${params.title}`)
+      .then(response => {
+        //saving the data to Post
+        setPost(response.data);
+        console.log(response.data);
+        
+      })
+      .catch( err =>{
+        console.log("Error from ShowBook_get", err);
+      });
+  }, [params.title]);
+  //if our post is null, don't return much.
+  if(!post) return "Nothing was got";
+
+  //if our post is populated, return actual information
+  return(
+    <div>
+      {/* Link will go to specified URL*/}
+      <Link to="/show"> Back to BooksList</Link>
+      <div>
+        <p> Title: {post.title}</p>
+        <p> Author: {post.author}</p>
+        <p> Rating: {post.rating}</p>
+        <p> Movie: {post.movie}</p>
+      </div>
+      {/* Link will go to specified URL*/}
+      <Link to={`/update-book/${post._id}`}> Edit Book </Link>
+    </div>
+  );
+
+}
+export default ShowBook;

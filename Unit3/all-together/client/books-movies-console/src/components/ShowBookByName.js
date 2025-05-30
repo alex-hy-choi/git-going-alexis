@@ -37,7 +37,8 @@ function ShowBook (props) {
       {/* Link will go to specified URL*/}
       <Link class="sublink" to="/show"> Back to Homepage</Link>
       <div>
-        <p> Title: {post.title}</p>
+        <h2> Title: {post.title}</h2>
+        <hr/>
         <p> Author: {post.author}</p>
         <p> Rating: {post.rating}</p>
         <p>Movie: {post.movie ? 'Yes' : 'No'}</p>

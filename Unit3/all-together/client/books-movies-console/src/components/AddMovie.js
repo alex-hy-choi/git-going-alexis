@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 class AddMovie extends Component {
@@ -69,7 +69,10 @@ class AddMovie extends Component {
           submitted && (
           <Navigate to="/show" replace={true} />
         )}
+        <Link class="sublink" to="/show"> Back to Homepage</Link>
         <h2>Add Movie</h2>
+        <hr/>
+        <br/>
         {/* <p>Create new movie</p> */}
         <form noValidate onSubmit={this.onSubmit}>
           <div>
@@ -105,13 +108,16 @@ class AddMovie extends Component {
           </div>
           <br />
           <div>
+            <label class='checkbox-label' for="checking"> Book? </label>
             <input
               type='checkbox'
               placeholder='Book? (T/F)'
               name='book'
+              id='checking'
               value={this.state.book}
               onChange={e => this.setState({ book: e.target.checked })}
             />
+            
           </div>
           <br />
           <div>

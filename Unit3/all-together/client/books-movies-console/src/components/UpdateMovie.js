@@ -73,7 +73,7 @@ class UpdateMovie extends Component {
     return (
       <div>
         {/* Link will go to specified URL*/}
-        <Link to="/show"> Back to Homepage</Link>
+        <Link class="sublink" to="/show"> Back to Homepage</Link>
         {/* If submitted is true, also render <Navigate>
           which auto Navigates to the URL specified
           */
@@ -81,7 +81,8 @@ class UpdateMovie extends Component {
           <Navigate to="/show" replace={true} />
         )}
         <h2>Update Movie</h2>
-        <p>Update new movie</p>
+        <hr/>
+        <br/>
         <form noValidate onSubmit={this.onSubmit}>
           <div>
             <input

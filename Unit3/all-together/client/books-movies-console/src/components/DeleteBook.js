@@ -9,9 +9,22 @@ class UpdateBook extends Component {
     this.state = {
       confirmDelete: false,
       submitted: false,
+      title: props.location?.state?.title || "",
     };
   }
 
+  componentDidMount() {
+    const id = this.props.params?.id;
+    if (!this.state.title && id) {
+      axios.get(`/book/${id}`)
+        .then(res => {
+          this.setState({ title: res.data.title });
+        })
+        .catch(err => {
+          console.error("Error fetching book data:", err);
+        });
+    }
+  }
   
   onCheckboxChange = (e) => {
     this.setState({ [e.target.name]: e.target.checked });
@@ -21,6 +34,11 @@ class UpdateBook extends Component {
     console.log('params:', this.props.params);
     console.log('params.id:', this.props.params?.id);
     e.preventDefault();
+
+    if (!this.state.confirmDelete) {
+      alert("Please confirm deletion by checking the box.");
+      return;
+    }
 
     //now we use axios to communicate with our backend
     //look at routes.js in the backend
@@ -46,8 +64,10 @@ class UpdateBook extends Component {
 
     return (
       <div>
-        <Link to="/show">Back to Books List</Link>
-        <h2>Delete Book</h2>
+        <br/>
+        <Link class="sublink" to="/show">Back to Books List</Link>
+        <h1>Deleting Book: {this.state.title || "Deleting Book..."}</h1>
+        {/* <h2>Delete Book</h2> */}
         <form noValidate onSubmit={this.onSubmit}>
           <label>
             Are you sure you want to delete?
@@ -58,6 +78,7 @@ class UpdateBook extends Component {
               onChange={this.onCheckboxChange}
             />
           </label>
+          <br />
           <br />
           <button type="submit">Delete Book</button>
         </form>

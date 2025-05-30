@@ -60,6 +60,24 @@ a:hover {
   color: lightskyblue;
 }
 
+input {
+  font-family: "OpenSans", sans-serif;
+  padding: 5px;
+}
+
+button {
+  font-family: "PlayfairDisplay", sans-serif;
+  font-style: italic;
+  padding: 10px;
+  background-color: blue;
+  border-radius: 3px;
+  color: white;
+  border: 0px;
+}
+button:hover {
+  background-color: lightskyblue;
+}
+
 .sublink {
   font-family: "PlayfairDisplay", serif;
   font-style: italic;
@@ -67,8 +85,10 @@ a:hover {
 }
 
 .card {
-  padding: 0px 0px 20px 0px;
-  margin: 5px;
+  padding: 10px 10px 20px 10px;
+  margin-top: 10px;
+  background-color: aliceblue;
+  border-radius: 5px;
 }
 
 .mainlink {
@@ -81,4 +101,10 @@ a:hover {
 #title {
   font-size: 50px;
   margin: 5px;
+}
+
+#topbar {
+  background-color: lavenderblush;
+  padding: 20px;
+  border-radius: 5px;
 }

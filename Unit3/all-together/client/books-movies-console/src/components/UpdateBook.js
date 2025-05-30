@@ -69,7 +69,7 @@ class UpdateBook extends Component {
     return (
       <div>
         {/* Link will go to specified URL*/}
-        <Link to="/show"> Back to Homepage</Link>
+        <Link class="sublink" to="/show"> Back to Homepage</Link>
         {/* If submitted is true, also render <Navigate>
           which auto Navigates to the URL specified
           */
@@ -77,7 +77,7 @@ class UpdateBook extends Component {
           <Navigate to="/show" replace={true} />
         )}
         <h2>Update Book</h2>
-        <p>Update new book</p>
+        {/* <p>Update new book</p> */}
         <form noValidate onSubmit={this.onSubmit}>
           <div>
             <input
@@ -111,16 +111,39 @@ class UpdateBook extends Component {
             />
           </div>
           <br />
-          <label>
-            Movie for Book
+          <div>
+            <label class='checkbox-label' htmlFor="checking"> Book? </label>
             <input
               type='checkbox'
-              placeholder='Movie for Book'
-              name='movie'
-              value={this.state.movie}
-              onChange={this.onCheckboxChange}
+              placeholder='Book? (T/F)'
+              name='book'
+              id='checking'
+              value={this.state.book}
+              onChange={e => this.setState({ book: e.target.checked })}
             />
-          </label>
+            
+          </div>
+          <br />
+          <div>
+            <input
+              type='text'
+              placeholder='Genre of Movie'
+              name='genre'
+              value={this.state.genre}
+              onChange={this.onChange}
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              type='text'
+              placeholder='Review of Movie'
+              name='review'
+              value={this.state.review}
+              onChange={this.onChange}
+            />
+          </div>
+          <br />
           <br />
           <button type="submit">Click to submit</button>
         </form>

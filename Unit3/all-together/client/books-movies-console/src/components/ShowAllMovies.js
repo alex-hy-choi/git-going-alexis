@@ -50,7 +50,7 @@ class ShowAllMovies extends Component {
     return (
       <div>
           <div>
-              <br />
+              {/* <br /> */}
               <h1 >Movies List</h1>
             <div>
               <Link class="sublink" to="/add-movie">

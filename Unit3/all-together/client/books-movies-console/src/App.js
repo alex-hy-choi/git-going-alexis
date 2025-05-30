@@ -4,8 +4,11 @@ import "./App.css";
 export default function App() {
   return (
     <div>
-      <h1 id="title">Books & Movies!</h1>
-      <h3>A log by Alexis Choi</h3>
+      <div  id="topbar">
+        <h1 id="title">Books & Movies!</h1>
+        <h3>A log by Alexis Choi</h3>
+      </div>
+      {/* <br/> */}
       <Outlet />
     </div>
 

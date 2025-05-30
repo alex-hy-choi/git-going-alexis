@@ -12,15 +12,33 @@ class UpdateMovie extends Component {
     };
   }
 
+  componentDidMount() {
+    const id = this.props.params?.id;
+    if (!this.state.title && id) {
+      axios.get(`/movie/${id}`)
+        .then(res => {
+          this.setState({ title: res.data.title });
+        })
+        .catch(err => {
+          console.error("Error fetching movie data:", err);
+        });
+    }
+  }
   
   onCheckboxChange = (e) => {
     this.setState({ [e.target.name]: e.target.checked });
   };
 
+
   onSubmit = e => {
     console.log('params:', this.props.params);
     console.log('params.id:', this.props.params?.id);
     e.preventDefault();
+
+    if (!this.state.confirmDelete) {
+      alert("Please confirm deletion by checking the box.");
+      return;
+    }
 
     //now we use axios to communicate with our backend
     //look at routes.js in the backend
@@ -46,11 +64,12 @@ class UpdateMovie extends Component {
 
     return (
       <div>
-        <Link to="/show">Back to Movies List</Link>
-        <h2>Delete Movie</h2>
+        <br/>
+        <Link class="sublink" to="/show">Back to Homepage</Link>
+        <h1>Deleting Movie: {this.state.title || "Deleting Movie..."}</h1>
         <form noValidate onSubmit={this.onSubmit}>
           <label>
-            Are you sure you want to delete?
+            Are you sure you want to delete this movie?
             <input
               type="checkbox"
               name="confirmDelete"
@@ -58,6 +77,7 @@ class UpdateMovie extends Component {
               onChange={this.onCheckboxChange}
             />
           </label>
+          <br />
           <br />
           <button type="submit">Delete Movie</button>
         </form>

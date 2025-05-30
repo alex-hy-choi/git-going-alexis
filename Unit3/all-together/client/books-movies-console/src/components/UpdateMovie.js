@@ -73,12 +73,12 @@ class UpdateMovie extends Component {
     return (
       <div>
         {/* Link will go to specified URL*/}
-        <Link to="/show-movie"> Back to MoviesList</Link>
+        <Link to="/show"> Back to Homepage</Link>
         {/* If submitted is true, also render <Navigate>
           which auto Navigates to the URL specified
           */
           submitted && (
-          <Navigate to="/show-movie" replace={true} />
+          <Navigate to="/show" replace={true} />
         )}
         <h2>Update Movie</h2>
         <p>Update new movie</p>

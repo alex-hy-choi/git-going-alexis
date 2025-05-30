@@ -25,8 +25,8 @@ class UpdateBook extends Component {
   };
 
   onSubmit = e => {
-    console.log('params:', this.props.params);
-    console.log('params.id:', this.props.params?.id);
+    // console.log('params:', this.props.params);
+    // console.log('params.id:', this.props.params?.id);
     e.preventDefault();
 
     //this is akin to making our JSON object
@@ -69,7 +69,7 @@ class UpdateBook extends Component {
     return (
       <div>
         {/* Link will go to specified URL*/}
-        <Link to="/show"> Back to BooksList</Link>
+        <Link to="/show"> Back to Homepage</Link>
         {/* If submitted is true, also render <Navigate>
           which auto Navigates to the URL specified
           */

@@ -51,9 +51,9 @@ class ShowAllMovies extends Component {
       <div>
           <div>
               <br />
-              <h2>Movies List</h2>
+              <h1 >Movies List</h1>
             <div>
-              <Link to="/add-movie">
+              <Link class="sublink" to="/add-movie">
                 + Add New Movie
               </Link>
               <br />

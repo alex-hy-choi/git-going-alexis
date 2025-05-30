@@ -50,9 +50,9 @@ class ShowAllBooks extends Component {
       <div>
           <div>
               <br />
-              <h2>Books List</h2>
+              <h1 >Books List</h1>
             <div>
-              <Link to="/add-book">
+              <Link class="sublink" to="/add-book">
                 + Add New Book
               </Link>
               <br />

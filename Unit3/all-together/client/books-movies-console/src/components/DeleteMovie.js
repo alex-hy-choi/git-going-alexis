@@ -41,12 +41,12 @@ class UpdateMovie extends Component {
 
   render() {
     if (this.state.submitted) {
-      return <Navigate to="/show-movie" replace={true} />;
+      return <Navigate to="/show" replace={true} />;
     }
 
     return (
       <div>
-        <Link to="/show-movie">Back to Movies List</Link>
+        <Link to="/show">Back to Movies List</Link>
         <h2>Delete Movie</h2>
         <form noValidate onSubmit={this.onSubmit}>
           <label>

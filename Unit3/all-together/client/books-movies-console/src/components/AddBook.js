@@ -70,7 +70,7 @@ class AddBook extends Component {
           <Navigate to="/show" replace={true} />
         )}
         <h2>Add Book</h2>
-        <p>Create new book</p>
+        {/* <p>Create new book</p> */}
         <form noValidate onSubmit={this.onSubmit}>
           <div>
             <input

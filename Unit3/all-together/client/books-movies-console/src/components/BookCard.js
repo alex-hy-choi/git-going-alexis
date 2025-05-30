@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 function BookCard ({ bookInfo }) {
     return(
         <div>
-            <div>
+            <div class="card">
                 <h2>
                   {/* Link will go to specified URL*/}
                   {/* Note ` ` quotes to be able to use book info*/}
-                  <Link to={`/show/${bookInfo.title}`} replace>
+                  <Link  class="mainlink" to={`/show-book/${bookInfo.title}`} replace>
                       { bookInfo.title }
                   </Link>
                 </h2>
@@ -18,10 +18,10 @@ function BookCard ({ bookInfo }) {
                 <p>Movie: {bookInfo.movie ? 'Yes' : 'No'}</p>
                 <p>Genre: {bookInfo.genre}</p>
                 {/* <p>Review: {bookInfo.review}</p> */}
-                <Link to={`/update-book/${bookInfo._id}`} state={bookInfo}>
+                <Link class="sublink" to={`/update-book/${bookInfo._id}`} state={bookInfo}>
                     Update
                 </Link>
-                <Link to={`/delete-book/${bookInfo._id}`} state={bookInfo}>
+                <Link class="sublink" to={`/delete-book/${bookInfo._id}`} state={bookInfo}>
                     Delete
                 </Link>
             </div>

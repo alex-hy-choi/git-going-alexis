@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url(./assets/PlayfairDisplay.ttf) format('truetype');
+  font-style: normal;
+  font-weight: 400;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url(./assets/PlayfairDisplay-Italic.ttf) format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url(./assets/PlayfairDisplay-Bold.ttf) format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url(./assets/OpenSans-Regular.ttf) format('truetype'),
+       url(./assets/OpenSans-Regular.woff) format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  margin: 2pc;
+  font-family: "OpenSans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: auto;
+}
+
+html {
+  overflow: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "PlayfairDisplay", serif;
+}
+
+h3 {
+  margin: 5px;
+}
+
+p {
+  margin: 5px;
+}
+
+a {
+  color:blue;
+}
+a:hover {
+  color: lightskyblue;
+}
+
+.sublink {
+  font-family: "PlayfairDisplay", serif;
+  font-style: italic;
+  margin: 5px;
+}
+
+.card {
+  padding: 0px 0px 20px 0px;
+  margin: 5px;
+}
+
+.mainlink {
+  color:navy
+}
+.mainlink:hover {
+  color:lightskyblue
+}
+
+#title {
+  font-size: 50px;
+  margin: 5px;
 }

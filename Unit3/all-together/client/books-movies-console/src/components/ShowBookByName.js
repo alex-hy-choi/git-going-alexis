@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navigate, Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -35,7 +35,7 @@ function ShowBook (props) {
   return(
     <div>
       {/* Link will go to specified URL*/}
-      <Link to="/show"> Back to BooksList</Link>
+      <Link class="sublink" to="/show"> Back to Homepage</Link>
       <div>
         <p> Title: {post.title}</p>
         <p> Author: {post.author}</p>
@@ -45,8 +45,8 @@ function ShowBook (props) {
         <p> Review: {post.review}</p>
       </div>
       {/* Link will go to specified URL*/}
-      <Link to={`/update-book/${post._id}`}> Edit Book </Link>
-      <Link to={`/delete-book/${post._id}`}> Delete Book </Link>
+      <Link class="sublink" to={`/update-book/${post._id}`}> Edit Book </Link>
+      <Link class="sublink" to={`/delete-book/${post._id}`}> Delete Book </Link>
     </div>
   );
 

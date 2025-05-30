@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navigate, Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -35,7 +35,7 @@ function ShowMovie (props) {
   return(
     <div>
       {/* Link will go to specified URL*/}
-      <Link to="/show-movie"> Back to MoviesList</Link>
+      <Link class="sublink" to="/show"> Back to Homepage</Link>
       <div>
         <p> Title: {post.title}</p>
         <p> Director: {post.director}</p>
@@ -45,8 +45,8 @@ function ShowMovie (props) {
         <p> Review: {post.review}</p>
       </div>
       {/* Link will go to specified URL*/}
-      <Link to={`/update-movie/${post._id}`}> Edit Movie </Link>
-      <Link to={`/delete-movie/${post._id}`}> Delete Movie </Link>
+      <Link class="sublink" to={`/update-movie/${post._id}`}> Edit Movie </Link>
+      <Link class="sublink" to={`/delete-movie/${post._id}`}> Delete Movie </Link>
     </div>
   );
 

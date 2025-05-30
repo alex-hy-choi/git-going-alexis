@@ -67,10 +67,10 @@ class AddMovie extends Component {
           which auto Navigates to the URL specified
           */
           submitted && (
-          <Navigate to="/show-movie" replace={true} />
+          <Navigate to="/show" replace={true} />
         )}
         <h2>Add Movie</h2>
-        <p>Create new movie</p>
+        {/* <p>Create new movie</p> */}
         <form noValidate onSubmit={this.onSubmit}>
           <div>
             <input

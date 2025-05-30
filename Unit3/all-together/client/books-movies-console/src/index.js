@@ -4,18 +4,23 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import App from "./App";
-import AddBook from "./components/AddBook"
-import ShowAllBooks from "./components/ShowAllBooks"
-import ShowBookByName from "./components/ShowBookByName"
-import UpdateBook from "./components/UpdateBook"
-import DeleteBook from "./components/DeleteBook"
 
-import AddMovie from "./components/AddMovie"
-import ShowAllMovies from "./components/ShowAllMovies"
-import ShowMovieByName from "./components/ShowMovieByName"
-import UpdateMovie from "./components/UpdateMovie"
-import DeleteMovie from "./components/DeleteMovie"
+import "./index.css"
+
+import App from "./App.js";
+import Homepage from "./components/Homepage.js"
+
+import AddBook from "./components/AddBook.js"
+import ShowAllBooks from "./components/ShowAllBooks.js"
+import ShowBookByName from "./components/ShowBookByName.js"
+import UpdateBook from "./components/UpdateBook.js"
+import DeleteBook from "./components/DeleteBook.js"
+
+import AddMovie from "./components/AddMovie.js"
+import ShowAllMovies from "./components/ShowAllMovies.js"
+import ShowMovieByName from "./components/ShowMovieByName.js"
+import UpdateMovie from "./components/UpdateMovie.js"
+import DeleteMovie from "./components/DeleteMovie.js"
 
 
 const container = document.getElementById('root');
@@ -24,6 +29,8 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element= {<App />}>
+        <Route path="/show" element= {<Homepage />}/>
+
         <Route path="show-book" element={<ShowAllBooks />}  />
         <Route path='show-book/:title' element={<ShowBookByName />} />
         <Route path="add-book" element={<AddBook />} />

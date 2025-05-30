@@ -34,10 +34,11 @@ function ShowMovie (props) {
   //if our post is populated, return actual information
   return(
     <div>
+      <br/>
       {/* Link will go to specified URL*/}
       <Link class="sublink" to="/show"> Back to Homepage</Link>
       <div>
-        <p> Title: {post.title}</p>
+        <h2> Title: {post.title}</h2>
         <p> Director: {post.director}</p>
         <p> Rating: {post.rating}</p>
         <p> Book: {post.book ? 'Yes' : 'No'}</p>

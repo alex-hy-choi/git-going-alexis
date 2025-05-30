@@ -63,6 +63,7 @@ class AddMovie extends Component {
     let submitted = this.state.submitted;
     return (
       <div>
+        <br/>
         {/* If submitted is true, also render <Navigate>
           which auto Navigates to the URL specified
           */
@@ -100,7 +101,7 @@ class AddMovie extends Component {
               type='number'
               min='0'
               max='5'
-              placeholder='Rating'
+              // placeholder='Rating'
               name='rating'
               value={this.state.rating}
               onChange={this.onChange}

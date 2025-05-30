@@ -43,6 +43,8 @@ h1,
 h2,
 h3 {
   font-family: "PlayfairDisplay", serif;
+  margin: 5px;
+  margin-bottom: 10px;
 }
 
 h3 {

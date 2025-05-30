@@ -9,7 +9,7 @@ class UpdateBook extends Component {
     this.state = {
       title: '',
       author:'',
-      rating:'',
+      rating:0,
       movie:'',
       submitted: null,
     };
@@ -68,6 +68,7 @@ class UpdateBook extends Component {
     let submitted = this.state.submitted;
     return (
       <div>
+        <br/>
         {/* Link will go to specified URL*/}
         <Link class="sublink" to="/show"> Back to Homepage</Link>
         {/* If submitted is true, also render <Navigate>
@@ -100,10 +101,12 @@ class UpdateBook extends Component {
           </div>
           <br />
           <div>
+          <label class='checkbox-label' htmlFor="rating"> Rating:  </label>
             <input
               type='number'
-              placeholder='Rating of Book'
+              // placeholder='Rating of Book'
               name='rating'
+              id='rating'
               value={this.state.rating}
               onChange={this.onChange}
               min={0}
@@ -112,16 +115,15 @@ class UpdateBook extends Component {
           </div>
           <br />
           <div>
-            <label class='checkbox-label' htmlFor="checking"> Book? </label>
+            <label class='checkbox-label' htmlFor="checking"> Movie? </label>
             <input
               type='checkbox'
-              placeholder='Book? (T/F)'
-              name='book'
+              // placeholder='Movie? (T/F)'
+              name='movie'
               id='checking'
               value={this.state.book}
               onChange={e => this.setState({ book: e.target.checked })}
             />
-            
           </div>
           <br />
           <div>

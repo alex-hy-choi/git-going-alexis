@@ -72,6 +72,7 @@ class UpdateMovie extends Component {
     let submitted = this.state.submitted;
     return (
       <div>
+        <br/>
         {/* Link will go to specified URL*/}
         <Link class="sublink" to="/show"> Back to Homepage</Link>
         {/* If submitted is true, also render <Navigate>
@@ -105,10 +106,12 @@ class UpdateMovie extends Component {
           </div>
           <br />
           <div>
+            <label class='checkbox-label' htmlFor="rating"> Rating:  </label>
             <input
               type='number'
               placeholder='Rating of Movie'
               name='rating'
+              id='rating'
               value={this.state.rating}
               onChange={this.onChange}
               min={0}
@@ -117,6 +120,7 @@ class UpdateMovie extends Component {
           </div>
           <br />
           <div>
+            <label class='checkbox-label' htmlFor="checking"> Book? </label>
             <input
               type='checkbox'
               placeholder='Book? (T/F)'

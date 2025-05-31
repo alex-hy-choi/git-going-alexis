@@ -70,7 +70,7 @@ class AddBook extends Component {
           submitted && (
           <Navigate to="/show" replace={true} />
         )}
-        <Link class="sublink" to="/show"> Back to Homepage</Link>
+        <Link className="sublink" to="/show"> Back to Homepage</Link>
         <h2>Add Book</h2>
         <hr/>
         <br/>
@@ -101,7 +101,7 @@ class AddBook extends Component {
             <input
               type='number'
               min='0'
-              max='5'
+              max='10'
               // placeholder='Rating'
               name='rating'
               value={this.state.rating}
@@ -110,7 +110,7 @@ class AddBook extends Component {
           </div>
           <br />
           <div>
-            <label class='checkbox-label' for="checking"> Movie? </label>
+            <label className='checkbox-label' for="checking"> Movie? </label>
             <input
               type='checkbox'
               placeholder='Movie? (T/F)'

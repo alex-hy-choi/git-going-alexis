@@ -36,9 +36,9 @@ function ShowMovie (props) {
     <div>
       <br/>
       {/* Link will go to specified URL*/}
-      <Link class="sublink" to="/show"> Back to Homepage</Link>
+      <Link className="sublink" to="/show"> Back to Homepage</Link>
       <div>
-        <h1 class="split-title"> Title: {post.title}</h1>
+        <h1 className="split-title"> Title: {post.title}</h1>
         <hr/>
         <p> Director: {post.director}</p>
         <p> Rating: {post.rating}</p>
@@ -47,8 +47,8 @@ function ShowMovie (props) {
         <p> Review: {post.review}</p>
       </div>
       {/* Link will go to specified URL*/}
-      <Link class="sublink" to={`/update-movie/${post._id}`}> Edit Movie </Link>
-      <Link class="sublink" to={`/delete-movie/${post._id}`}> Delete Movie </Link>
+      <Link className="sublink" to={`/update-movie/${post._id}`}> Edit Movie </Link>
+      <Link className="sublink" to={`/delete-movie/${post._id}`}> Delete Movie </Link>
     </div>
   );
 

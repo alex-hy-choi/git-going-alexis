@@ -70,7 +70,7 @@ class AddMovie extends Component {
           submitted && (
           <Navigate to="/show" replace={true} />
         )}
-        <Link class="sublink" to="/show"> Back to Homepage</Link>
+        <Link className="sublink" to="/show"> Back to Homepage</Link>
         <h2>Add Movie</h2>
         <hr/>
         <br/>
@@ -100,7 +100,7 @@ class AddMovie extends Component {
             <input
               type='number'
               min='0'
-              max='5'
+              max='10'
               // placeholder='Rating'
               name='rating'
               value={this.state.rating}
@@ -109,7 +109,7 @@ class AddMovie extends Component {
           </div>
           <br />
           <div>
-            <label class='checkbox-label' for="checking"> Book? </label>
+            <label className='checkbox-label' htmlFor="checking"> Book? </label>
             <input
               type='checkbox'
               placeholder='Book? (T/F)'

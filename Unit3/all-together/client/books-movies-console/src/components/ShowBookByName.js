@@ -36,9 +36,9 @@ function ShowBook (props) {
     <div>
       <br/>
       {/* Link will go to specified URL*/}
-      <Link class="sublink" to="/show"> Back to Homepage</Link>
+      <Link className="sublink" to="/show"> Back to Homepage</Link>
       <div>
-        <h1 class="split-title"> Title: {post.title}</h1>
+        <h1 className="split-title"> Title: {post.title}</h1>
         <hr/>
         <p> Author: {post.author}</p>
         <p> Rating: {post.rating}</p>
@@ -47,8 +47,8 @@ function ShowBook (props) {
         <p> Review: {post.review}</p>
       </div>
       {/* Link will go to specified URL*/}
-      <Link class="sublink" to={`/update-book/${post._id}`}> Edit Book </Link>
-      <Link class="sublink" to={`/delete-book/${post._id}`}> Delete Book </Link>
+      <Link className="sublink" to={`/update-book/${post._id}`}> Edit Book </Link>
+      <Link className="sublink" to={`/delete-book/${post._id}`}> Delete Book </Link>
     </div>
   );
 

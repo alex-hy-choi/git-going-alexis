@@ -34,10 +34,11 @@ function ShowBook (props) {
   //if our post is populated, return actual information
   return(
     <div>
+      <br/>
       {/* Link will go to specified URL*/}
       <Link class="sublink" to="/show"> Back to Homepage</Link>
       <div>
-        <h2> Title: {post.title}</h2>
+        <h1 class="split-title"> Title: {post.title}</h1>
         <hr/>
         <p> Author: {post.author}</p>
         <p> Rating: {post.rating}</p>

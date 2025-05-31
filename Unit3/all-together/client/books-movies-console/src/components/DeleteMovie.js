@@ -66,7 +66,7 @@ class UpdateMovie extends Component {
       <div>
         <br/>
         <Link class="sublink" to="/show">Back to Homepage</Link>
-        <h1>Deleting Movie: {this.state.title || "Deleting Movie..."}</h1>
+        <h1 class="split-title">Deleting Movie: {this.state.title || "Deleting Movie..."}</h1>
         <form noValidate onSubmit={this.onSubmit}>
           <label>
             Are you sure you want to delete this movie?

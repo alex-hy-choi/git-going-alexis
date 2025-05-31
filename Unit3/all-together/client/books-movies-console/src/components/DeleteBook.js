@@ -66,7 +66,7 @@ class UpdateBook extends Component {
       <div>
         <br/>
         <Link class="sublink" to="/show">Back to Books List</Link>
-        <h1>Deleting Book: {this.state.title || "Deleting Book..."}</h1>
+        <h1 class="split-title">Deleting Book: {this.state.title || "Deleting Book..."}</h1>
         {/* <h2>Delete Book</h2> */}
         <form noValidate onSubmit={this.onSubmit}>
           <label>

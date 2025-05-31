@@ -53,7 +53,7 @@ class ShowAllMovies extends Component {
               {/* <br /> */}
               <h1 >Movies List</h1>
             <div>
-              <Link class="sublink" to="/add-movie">
+              <Link class="sublink add-new" to="/add-movie">
                 + Add New Movie
               </Link>
               <br />

@@ -38,7 +38,8 @@ function ShowMovie (props) {
       {/* Link will go to specified URL*/}
       <Link class="sublink" to="/show"> Back to Homepage</Link>
       <div>
-        <h2> Title: {post.title}</h2>
+        <h1 class="split-title"> Title: {post.title}</h1>
+        <hr/>
         <p> Director: {post.director}</p>
         <p> Rating: {post.rating}</p>
         <p> Book: {post.book ? 'Yes' : 'No'}</p>

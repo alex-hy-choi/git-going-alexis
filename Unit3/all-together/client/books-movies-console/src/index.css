@@ -80,10 +80,20 @@ button:hover {
   background-color: lightskyblue;
 }
 
+.split-title {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
 .sublink {
   font-family: "PlayfairDisplay", serif;
   font-style: italic;
   margin: 5px;
+}
+
+.add-new{
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .card {

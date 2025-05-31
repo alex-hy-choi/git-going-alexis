@@ -81,7 +81,7 @@ class UpdateMovie extends Component {
           submitted && (
           <Navigate to="/show" replace={true} />
         )}
-        <h2>Update Movie</h2>
+        <h1 class="split-title">Update Movie</h1>
         <hr/>
         <br/>
         <form noValidate onSubmit={this.onSubmit}>

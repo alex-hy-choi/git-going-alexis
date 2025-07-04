@@ -70,14 +70,14 @@ class UpdateBook extends Component {
       <div>
         <br/>
         {/* Link will go to specified URL*/}
-        <Link class="sublink" to="/show"> Back to Homepage</Link>
+        <Link className="sublink" to="/show"> Back to Homepage</Link>
         {/* If submitted is true, also render <Navigate>
           which auto Navigates to the URL specified
           */
           submitted && (
           <Navigate to="/show" replace={true} />
         )}
-        <h1 class="split-title">Update Book</h1>
+        <h1 className="split-title">Update Book</h1>
         <hr/>
         <br/>
         {/* <p>Update new book</p> */}
@@ -103,7 +103,7 @@ class UpdateBook extends Component {
           </div>
           <br />
           <div>
-          <label class='checkbox-label' htmlFor="rating"> Rating:  </label>
+          <label className='checkbox-label' htmlFor="rating"> Rating:  </label>
             <input
               type='number'
               // placeholder='Rating of Book'
@@ -117,7 +117,7 @@ class UpdateBook extends Component {
           </div>
           <br />
           <div>
-            <label class='checkbox-label' htmlFor="checking"> Movie? </label>
+            <label className='checkbox-label' htmlFor="checking"> Movie? </label>
             <input
               type='checkbox'
               // placeholder='Movie? (T/F)'
@@ -140,6 +140,7 @@ class UpdateBook extends Component {
           <br />
           <div>
             <input
+              className='review'
               type='text'
               placeholder='Review of Book'
               name='review'

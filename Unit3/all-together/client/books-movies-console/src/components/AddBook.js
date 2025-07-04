@@ -110,7 +110,7 @@ class AddBook extends Component {
           </div>
           <br />
           <div>
-            <label className='checkbox-label' for="checking"> Movie? </label>
+            <label className='checkbox-label' htmlFor="checking"> Movie? </label>
             <input
               type='checkbox'
               placeholder='Movie? (T/F)'
@@ -134,6 +134,7 @@ class AddBook extends Component {
           <br />
           <div>
             <input
+              className='review'
               type='text'
               placeholder='Review of Book'
               name='review'

@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url(./assets/PlayfairDisplay.ttf) format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url(./assets/PlayfairDisplay-Italic.ttf) format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url(./assets/PlayfairDisplay-Bold.ttf) format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url(./assets/OpenSans-Regular.ttf) format('truetype'),
+       url(./assets/OpenSans-Regular.woff) format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  margin: 2pc;
+  font-family: "OpenSans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: auto;
+}
+
+html {
+  overflow: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "PlayfairDisplay", serif;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin: 5px;
+}
+
+p {
+  margin: 5px;
+}
+
+a {
+  color:blue;
+}
+a:hover {
+  color: lightskyblue;
+}
+
+input {
+  font-family: "OpenSans", sans-serif;
+  padding: 5px;
+}
+
+button {
+  font-family: "PlayfairDisplay", sans-serif;
+  font-style: italic;
+  padding: 10px;
+  background-color: blue;
+  border-radius: 3px;
+  color: white;
+  border: 0px;
+}
+button:hover {
+  background-color: lightskyblue;
+}
+
+.split-title {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.sublink {
+  font-family: "PlayfairDisplay", serif;
+  font-style: italic;
+  margin: 5px;
+}
+
+.add-new{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.card {
+  padding: 10px 10px 20px 10px;
+  margin-top: 10px;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
+.mainlink {
+  color:navy
+}
+.mainlink:hover {
+  color:lightskyblue
+}
+
+#title {
+  font-size: 50px;
+  margin: 5px;
+}
+
+#topbar {
+  background-color: lavenderblush;
+  padding: 20px;
+  border-radius: 5px;
+}
+/* 
+.review {
+  vertical-align: text-top;
+  width: 400px;
+  height: 100px;
+} */

@@ -44,8 +44,8 @@ class AddUrl extends Component {
     return (
       <div>
         <br />
-        {submitted && <Navigate to="/show" replace={true} />}        
-        <Link className="sublink" to="/show"> Back to Homepage</Link>
+        {submitted && <Navigate to="/show-url" replace={true} />}        
+        <Link className="sublink" to="/show-url"> Back to URL List</Link>
         <h2>Add URL</h2>
         <hr />
         <br />

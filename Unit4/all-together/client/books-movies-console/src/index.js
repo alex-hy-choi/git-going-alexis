@@ -22,6 +22,9 @@ import ShowMovieByName from "./components/ShowMovieByName.js"
 import UpdateMovie from "./components/UpdateMovie.js"
 import DeleteMovie from "./components/DeleteMovie.js"
 import AddUrl from "./components/AddUrl.js"
+import ShowAllUrls from "./components/ShowAllUrls.js"
+import ShowUrlById from "./components/ShowUrlById.js"
+import DeleteUrl from "./components/DeleteUrl.js"
 
 
 const container = document.getElementById('root');
@@ -44,7 +47,10 @@ root.render(
         <Route path="update-movie/:id" element={<UpdateMovie />} />
         <Route path="delete-movie/:id" element={<DeleteMovie />} />
 
-        <Route path="/add-url" element={<AddUrl />} />
+        <Route path="show-url" element={<ShowAllUrls />} />
+        <Route path="show-url/:id" element={<ShowUrlById />} />
+        <Route path="delete-url/:id" element={<DeleteUrl />} />
+        <Route path="add-url" element={<AddUrl />} />
       </Route>
       <Route path="*" element={ <p>Uh oh! There's nothing here! </p>} />
     </Routes>
